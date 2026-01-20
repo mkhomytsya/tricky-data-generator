@@ -1,3 +1,4 @@
 # Ignore virtual environment and generated output
 .venv/
 output/
+.DS_Store
