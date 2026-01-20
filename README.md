@@ -69,6 +69,37 @@ writeFile(img.path, img.data)
 - Validate parser robustness for metadata and headers
 - Security testing for injection and encoding issues
 - Fuzzing inputs for format-parsing libraries
+## Included tools & Usage
+
+This repository includes small helper tools and a `Makefile` to run common workflows:
+
+- `generate_copies.py`: create many files with tricky filenames by copying a placeholder's content into multiple target names.
+- `generate_random_image.py`: generate a single random image file named `random_image.<ext>` where `<ext>` is chosen randomly (png/jpg/gif).
+- `Makefile`: convenience targets to prepare the environment and run the generators (see quick commands below).
+
+Quick commands (run from the project root):
+
+```
+# create environment and install dependencies (via Makefile)
+make venv
+
+# generate one random image into ./output
+make random-image
+
+# generate copies (uses placeholder path configured in the Makefile target)
+make copies
+
+# run both generators
+make generate
+
+# cleanup generated files
+make clean
+```
+
+Notes:
+
+- The `venv`/environment setup is handled by the `Makefile` so you can run the included tools consistently.
+- Adjust the `copies` target or call `generate_copies.py` directly if you want a different placeholder or output directory.
 
 ## TODO
 
